@@ -14,7 +14,7 @@ public class LetterNode {
 
 	private char letter;
 	private HashMap<Character, LetterNode> nodes   = new HashMap();
-
+	
 	public LetterNode(String word)
 	{
 		if (word.length() > 0)
@@ -55,6 +55,11 @@ public class LetterNode {
 	public boolean isLeafNode()  {
 		return nodes.isEmpty();
 	}
+	
+  
+	public long numberOfChildNodes() { 
+		return nodes.size(); 
+	}
 
 	
 	/*
@@ -93,5 +98,5 @@ public class LetterNode {
 		
 		return currentPlayer;
 	}
-
+	
 }  

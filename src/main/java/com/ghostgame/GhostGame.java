@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -41,9 +42,16 @@ public class GhostGame {
 		if (gameOver()) {
 			return;
 		}
-	}
 
+		if (nextMove == null) {
+			throw new NotAValidPlay(MessageFormat.format("Invalid play [{0}] for player [{1}]. The resulting word [{2}] "+ 
+						"does not exist in the dictionary and cannot be extended into a word ...", nextMove, player, currentLetterNode.toString() + nextMove));
+		}
+	}
+	
+	
 	private void playComputerGame(String player) {
+		
 	}
 	
 
